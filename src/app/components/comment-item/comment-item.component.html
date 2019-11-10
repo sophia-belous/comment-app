@@ -1,0 +1,24 @@
+<mat-card class="comment-card">
+  <mat-card-header class="comment-header">
+    <mat-icon mat-card-avatar>face</mat-icon>
+    <mat-card-title class="comment-title">{{ comment.title }}</mat-card-title>
+    <div class="comment-actions" align="end">
+      <button mat-icon-button (click)="editComment()">
+        <mat-icon>create</mat-icon>
+      </button>
+      <button mat-icon-button (click)="deleteComment()">
+        <mat-icon>clear</mat-icon>
+      </button>
+    </div>
+  </mat-card-header>
+  <mat-card-content class="comment-content">
+    <div
+      class="comment"
+      *ngIf="comment.text"
+      [innerHTML]="comment.text | parseCalculation"
+    ></div>
+    <div class="tag-list" align="end">
+      <button mat-button class="tag" color="primary" *ngFor="let tag of comment.tags">#{{ tag }}</button>
+    </div>
+  </mat-card-content>
+</mat-card>

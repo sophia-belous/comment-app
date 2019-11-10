@@ -1,0 +1,16 @@
+<div class="comments-container" fxLayout="row" fxFlex.md="70">
+  <div fxFlex *ngFor="let comment of commentList" class="comment-item">
+    <app-comment-item
+      [comment]="comment"
+      *ngIf="!comment.editable"
+      (onEdit)="comment.editable = true"
+      (onDelete)=deleteComment($event)
+    ></app-comment-item>
+    <app-comment-input
+      [comment]="comment"
+      [tagList]="tagList"
+      *ngIf="comment.editable"
+      (onSend)="saveComment($event)"
+    ></app-comment-input>
+  </div>
+</div>

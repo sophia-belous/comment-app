@@ -1,0 +1,33 @@
+.comment-card {
+  padding: 0;
+  overflow: auto;
+  .comment-header {
+    display: flex;
+    align-items: center;
+    background-color: #824c9e;
+    padding: 0px 16px;
+    color: white;
+
+    .comment-title {
+      margin: 0;
+      font-size: initial;
+    }
+
+    .comment-actions {
+      flex: 1;
+    }
+  }
+  .comment-content {
+    font-size: initial;
+    padding: 16px;
+
+    .tag-list {
+      .tag {
+        line-height: normal;
+        min-width: auto;
+        padding: 0 5px;
+        margin-left: 5px;
+      }
+    }
+  }
+}

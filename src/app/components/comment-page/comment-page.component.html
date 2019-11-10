@@ -1,0 +1,22 @@
+<mat-toolbar class="comments-header" color="primary">
+  <span>Comments</span>
+  <app-comment-filter-bar
+    align="end"
+    [tags]="tagList"
+    (onSelect)="filterByTag($event)"
+  ></app-comment-filter-bar>
+</mat-toolbar>
+<mat-card class="main-container">
+  <app-comment-list
+    *ngIf="commentList && commentList.length"
+    [tagList]="tagList"
+    [commentList]="commentList | filterByTag: selectedTag"
+    (onEditComment)="saveComment($event)"
+    (onDeleteComment)="deleteComment($event)"
+  ></app-comment-list>
+  <app-comment-input
+    *ngIf="tagList"
+    (onSend)="saveComment($event)"
+    [tagList]="tagList"
+  ></app-comment-input>
+</mat-card>

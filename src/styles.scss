@@ -1,0 +1,19 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; background-color: #4b2f5a;}
+.mat-form-field-appearance-outline .mat-form-field-infix {
+  padding: 0;
+  padding-bottom: 8px;
+}
+.mat-form-field-wrapper {
+  padding: 0;
+
+  .mat-form-field-subscript-wrapper {
+    margin-top: 0;
+    top: initial;
+  }
+}
+
+
+

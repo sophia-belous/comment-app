@@ -1,0 +1,12 @@
+.comment-save-form-container {
+  margin: 0 auto;
+
+  .comment-save-form {
+    display: flex;
+    flex-direction: column;
+
+    .comment-input {
+      margin-bottom: 5px;
+    }
+  }
+}

@@ -1,0 +1,12 @@
+<mat-form-field class="comment-filter" floatLabel="never">
+  <mat-label>Filter by tag</mat-label>
+  <mat-select
+    [(ngModel)]="selectedTag"
+    (selectionChange)="selectTag()"
+    name="tag">
+    <mat-option value="">All</mat-option>
+    <mat-option *ngFor="let tag of tags" [value]="tag">
+      {{ tag }}
+    </mat-option>
+  </mat-select>
+</mat-form-field>

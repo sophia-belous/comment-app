@@ -1,0 +1,39 @@
+<mat-card class="comment-save-form-container">
+  <form class="comment-save-form" [formGroup]="saveCommentForm">
+    <mat-form-field class="comment-input" appearance="outline">
+      <input
+        matInput
+        placeholder="Title"
+        type="text"
+        formControlName="title"
+      />
+      <mat-error *ngIf="saveCommentForm.hasError('required', 'title')">Title is required.</mat-error>
+      <mat-error *ngIf="saveCommentForm.hasError('maxlength', 'title')">Title length should be less than 120 characters.</mat-error>
+    </mat-form-field>
+    <mat-form-field class="comment-input" appearance="outline">
+      <textarea
+        matInput
+        placeholder="Leave a comment"
+        type="text"
+        formControlName="text"
+        cdkTextareaAutosize
+      ></textarea>
+
+      <mat-error *ngIf="saveCommentForm.hasError('required', 'text')">Comment is required.</mat-error>
+      <mat-error *ngIf="saveCommentForm.hasError('maxlength', 'text')">Comment length should be less than 500 characters.</mat-error>
+    </mat-form-field>
+    <app-tags-input [allTags]="tagList" [tags]=commentTags></app-tags-input>
+    <div class="comment-input-actions" align="end">
+      <button
+        mat-button
+        color="primary"
+        type="button"
+        [disabled]="!saveCommentForm.valid"
+        (click)="saveComment()"
+      >
+        Send
+      </button>
+      <button mat-button color="warn" type="button" (click)=reset()>Cancel</button>
+    </div>
+  </form>
+</mat-card>

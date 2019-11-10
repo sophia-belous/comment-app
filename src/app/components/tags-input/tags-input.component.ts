@@ -27,6 +27,7 @@ export class TagsInputComponent implements AfterViewInit {
   visible = true;
   selectable = true;
   removable = true;
+  addOnBlur = true;
   separatorKeysCodes: number[] = [ENTER, SPACE, COMMA];
   tagCtrl = new FormControl();
   filteredTags: Observable<string[]>;

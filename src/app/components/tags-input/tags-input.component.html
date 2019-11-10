@@ -17,7 +17,9 @@
         [formControl]="tagCtrl"
         [matAutocomplete]="auto"
         [matChipInputFor]="chipList"
+        [matChipInputAddOnBlur]="addOnBlur"
         [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+
         (matChipInputTokenEnd)="add($event)">
     </mat-chip-list>
     <mat-autocomplete #auto="matAutocomplete" (optionSelected)="selected($event)">
